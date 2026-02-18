@@ -27,10 +27,81 @@ Program ini dibuat menggunakan:
 - Library bawaan Python:
   - `itertools`
   - `time`
+  - `os`
 
 Tidak diperlukan instalasi library tambahan.
 
-Untuk memastikan Python telah terpasang:
+## 3. Cara Mengkompilasi Program
+
+Program ini dibuat menggunakan Python (bahasa interpreted), sehingga **tidak perlu dikompilasi** sebelum dijalankan.
+
+Untuk mengecek versi Python:
 
 ```bash
 python --version
+```
+
+---
+
+## 4. Cara Menjalankan dan Menggunakan Program
+
+### A. Menjalankan Program
+
+1. Buka terminal / command prompt.
+2. Masuk ke direktori utama repository:
+
+```bash
+cd Tucil1_13524039
+```
+
+3. Jalankan program dengan perintah:
+
+```bash
+python src/tucil.py
+```
+---
+
+### B. Cara Menggunakan Program
+
+1. Program akan menampilkan daftar file test case yang tersedia pada folder:
+
+```
+test/test_cases
+```
+
+2. Masukkan nomor test case yang ingin dijalankan.
+
+3. Program akan:
+   - Membaca konfigurasi papan dari file yang dipilih
+   - Mencari solusi menggunakan algoritma brute force
+   - Menampilkan hasil akhir board
+   - Menampilkan waktu pencarian
+   - Menampilkan jumlah kasus yang ditinjau
+
+4. Setelah solusi ditemukan, program akan menanyakan apakah solusi ingin disimpan.
+
+5. Jika memilih **"ya"**, maka solusi akan disimpan pada folder:
+
+```
+test/test_solutions
+```
+
+dengan format nama file:
+
+```
+solusi_namafiletestcase.txt
+```
+
+Contoh:
+
+```
+case1.txt → solusi_case1.txt
+```
+
+---
+
+## 5. Author
+
+Nama  : Rhenaldy Cahyadi Putra
+NIM   : 13524039
+Kelas : K-01
