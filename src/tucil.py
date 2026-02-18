@@ -43,7 +43,7 @@ if len(color) == 0:
 
 N = len(color)
 if any(len(row) != N for row in color):
-    print("Input tidak valid: Ada baris dengan panjang berbeda atau bentuk tidak persegi.")
+    print("Input tidak valid: Matriks harus berbentuk persegi (N x N).")
     exit()
 
 # Utility untuk memeriksa kolom diagonal dan warna
