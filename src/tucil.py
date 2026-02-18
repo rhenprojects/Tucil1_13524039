@@ -46,6 +46,9 @@ if any(len(row) != N for row in color):
     print("Input tidak valid: Matriks harus berbentuk persegi (N x N).")
     exit()
 
+live_update_input = input("Aktifkan live update? (Ya/Tidak): ").strip().lower()
+live_update = live_update_input == "ya"
+
 # Utility untuk memeriksa kolom diagonal dan warna
 def check_color(arr):
     used_colors = set()
@@ -66,10 +69,19 @@ def check_diagonal(arr):
 # Algoritma Brute-Force
 iteration_count = 0
 start_time = time.time()
+last_update_time = time.time()
 solution = None
 
 for perm in itertools.permutations(range(N)):
     iteration_count += 1
+
+    if live_update:
+        current_time = time.time()
+        if current_time - last_update_time >= 0.01:
+            elapsed = int((current_time - start_time) * 1000)
+            print(f"\rIteration: {iteration_count} | Time: {elapsed} ms\n", end="")
+            last_update_time = current_time
+
     if check_color(perm) and check_diagonal(perm):
         solution = perm
         break
