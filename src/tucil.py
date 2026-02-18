@@ -77,9 +77,9 @@ for perm in itertools.permutations(range(N)):
 
     if live_update:
         current_time = time.time()
-        if current_time - last_update_time >= 0.01:
+        if current_time - last_update_time >= 0.02:
             elapsed = int((current_time - start_time) * 1000)
-            print(f"\rIteration: {iteration_count} | Time: {elapsed} ms\n", end="")
+            print(f"Iteration: {iteration_count} | Time: {elapsed} ms")
             last_update_time = current_time
 
     if check_color(perm) and check_diagonal(perm):
